@@ -1,6 +1,6 @@
 {
   "name": "browser-image-compressor",
-  "version": "0.6.0",
+  "version": "0.6.1",
   "description": "JavaScript image compressor",
   "main": "dist/index.js",
   "scripts": {
@@ -15,7 +15,7 @@
   },
   "keywords": [
     "image",
-    "comporess",
+    "comporess-image",
     "compressor",
     "image-compressor",
     "canvas-compressor"
