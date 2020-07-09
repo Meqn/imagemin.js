@@ -1,5 +1,5 @@
 {
-  "name": "image-compressorjs",
+  "name": "browser-image-compressor",
   "version": "0.6.0",
   "description": "JavaScript image compressor",
   "main": "dist/index.js",
@@ -11,7 +11,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/Meqn/image-compressorjs.git"
+    "url": "git+https://github.com/Meqn/image-compressor.git"
   },
   "keywords": [
     "image",
@@ -23,9 +23,9 @@
   "author": "Mervin",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/Meqn/image-compressorjs/issues"
+    "url": "https://github.com/Meqn/image-compressor/issues"
   },
-  "homepage": "https://github.com/Meqn/image-compressorjs#readme",
+  "homepage": "https://github.com/Meqn/image-compressor#readme",
   "devDependencies": {
     "@babel/core": "^7.10.4",
     "@babel/plugin-transform-runtime": "^7.10.4",

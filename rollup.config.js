@@ -35,6 +35,7 @@ module.exports = {
     }))
   ],
   output: {
+    strict: true,
     file: `dist/${filename}.js`,
     format: 'umd',
     name: 'Compressor',
