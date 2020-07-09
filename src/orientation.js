@@ -108,7 +108,7 @@ export default function resetOrientation(arrayBuffer) {
  * 参考1：https://stackoverflow.com/questions/20600800/
  * 参考2：https://zhuanlan.zhihu.com/p/25216999
  * @param {Blob} arrayBuffer 文件File对象
- * @param {*} callback 回调
+ * @param {Function} callback 回调
  */
 function getOrientation(file, callback) {
   var reader = new FileReader();

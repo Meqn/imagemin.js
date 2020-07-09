@@ -9,7 +9,7 @@ import {
 
 import resetOrientation from './orientation'
 
-const defaults = {
+const DEFAULTS = {
   maxWidth: Infinity,
   maxHeight: Infinity,
   minWidth: 0,
@@ -32,7 +32,7 @@ export default class Comporessor {
     if (options.quality < 0 || options.quality > 1) {
       options.quality = 0.95
     }
-    this.options = Object.assign({}, defaults, options)
+    this.options = Object.assign({}, DEFAULTS, options)
     this.init()
   }
   async init() {
@@ -123,7 +123,7 @@ export default class Comporessor {
     let fillStyle = 'transparent';
 
     if (file.size > options.maxSize && options.mimeType === 'image/png') {
-      fillStyle = '#f00'
+      fillStyle = '#fff'
     }
 
     // Override the default fill color (#000, black)
@@ -147,19 +147,17 @@ export default class Comporessor {
     typeof options.drew === 'function' && options.drew.call(this, ctx, canvas)
     this.compress(canvas)
   }
-  resize({ width, height, size }) {
-    const { maxWidth, maxHeight, minWidth, minHeight, maxSize } = this.options
+  resize({ width, height }) {
+    const { maxWidth, maxHeight, minWidth, minHeight } = this.options
     const ratio = width / height
     let [destWidth, destHeight] = [width, height]
 
     if (width > maxWidth || height > maxHeight) {
       if (maxWidth / maxHeight > ratio) {
         destHeight = maxHeight
-        // destWidth = maxHeight * width / height
         destWidth = maxHeight * ratio
       } else {
         destWidth = maxWidth
-        // destHeight = maxWidth * height / width
         destHeight = maxWidth / ratio
       }
     }
@@ -167,11 +165,9 @@ export default class Comporessor {
     if (minWidth > 0 || minHeight > 0) {
       if (minWidth / minHeight > ratio) {
         destWidth = minWidth
-        // destHeight = minWidth * height / width
         destHeight = minWidth / ratio
       } else {
         destHeight = minHeight
-        // destWidth = minHeight * width / height
         destWidth = minHeight * ratio
       }
     }
@@ -191,19 +187,8 @@ export default class Comporessor {
     }
   }
 
-  abort() {
-    if (!this.aborted) {
-      this.aborted = true;
-
-      if (this.reader) {
-        this.reader.abort();
-      } else if (!this.image.complete) {
-        this.image.onload = null;
-        this.image.onabort();
-      } else {
-        this.fail(new Error('The compression process has been aborted.'));
-      }
-    }
+  static setDefaults(options) {
+    Object.assign(DEFAULTS, options)
   }
 
 }
