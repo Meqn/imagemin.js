@@ -13,7 +13,11 @@
   ],
   "presets": [
     ["@babel/preset-env", {
-      "modules": false
+      "modules": false,
+      "targets": {
+        "browsers": "> 1%, IE 10, not op_mini all, not dead",
+        "node": 10
+      }
     }]
   ]
 }

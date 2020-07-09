@@ -14,7 +14,6 @@ yarn-error.log*
 package-lock.json
 
 node_modules/
-dist/
 example/
 docs/
 src/compressor/
