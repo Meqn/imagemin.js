@@ -1,6 +1,6 @@
 {
-  "name": "imagemin.js",
-  "version": "1.0.0",
+  "name": "imagemin-web",
+  "version": "1.0.1",
   "description": "A JavaScript library for compressing images",
   "main": "dist/index.js",
   "scripts": {

@@ -1,4 +1,4 @@
-# Imagemin.js
+# imagemin-web
 
 > A simple image compressor that can be used to compress and resize image, And you can specify the image compression size.  
 > It use the Browser's native `canvas.toBlob` API to do the compression work.  
@@ -25,11 +25,11 @@
 ### Install
 
 ```
-npm install imagemin.js --save
+npm install imagemin-web --save
 
 # or 
 
-yarn add imagemin.js
+yarn add imagemin-web
 ```
 
 ### Usage
@@ -58,7 +58,7 @@ The options for compressing. Check out the available [options]().
 ```
 
 ```js
-import Imagemin from 'imagemin.js'
+import Imagemin from 'imagemin-web'
 
 $('#file').on('change', function(e) {
   const file = e.target.files[0]
