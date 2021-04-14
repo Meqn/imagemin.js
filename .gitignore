@@ -15,5 +15,3 @@ package-lock.json
 
 node_modules/
 example/
-docs/
-src/compressor/

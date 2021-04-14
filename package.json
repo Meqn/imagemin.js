@@ -1,7 +1,7 @@
 {
-  "name": "browser-image-compressor",
-  "version": "0.6.1",
-  "description": "JavaScript image compressor",
+  "name": "imagemin.js",
+  "version": "1.0.0",
+  "description": "A JavaScript library for compressing images",
   "main": "dist/index.js",
   "scripts": {
     "build:dev": "rollup --config",
@@ -15,7 +15,7 @@
   },
   "keywords": [
     "image",
-    "comporess-image",
+    "compress-image",
     "compressor",
     "image-compressor",
     "canvas-compressor"
@@ -23,9 +23,9 @@
   "author": "Mervin",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/Meqn/image-compressor/issues"
+    "url": "https://github.com/Meqn/imagemin.js/issues"
   },
-  "homepage": "https://github.com/Meqn/image-compressor#readme",
+  "homepage": "https://github.com/Meqn/imagemin.js#readme",
   "devDependencies": {
     "@babel/core": "^7.10.4",
     "@babel/plugin-transform-runtime": "^7.10.4",
