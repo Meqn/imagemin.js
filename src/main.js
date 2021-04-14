@@ -88,13 +88,16 @@ export default class Comporessor {
       if (result.size > maxSize) {
         mimeType = mimeType === 'image/png' ? 'image/jpeg' : mimeType
         // timer = 7
-        let timer = ~~(quality * 10)
+        let timer = ~~(quality * 20)
         while(timer--) {
           quality -= 0.05
           result = await canvasToBlob(canvas, {
             mimeType,
             quality
           })
+          if (quality < 0.1) {
+            break
+          }
           if (result.size < maxSize) {
             break
           }
