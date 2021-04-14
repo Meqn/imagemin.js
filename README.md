@@ -24,12 +24,20 @@
 
 ### Install
 
+**npm**
+
 ```
 npm install imagemin-web --save
 
 # or 
 
 yarn add imagemin-web
+```
+
+**Browser**
+
+```html
+<script src="//cdn.jsdelivr.net/npm/imagemin-web@1.0.1/dist/index.min.js">
 ```
 
 ### Usage
@@ -48,8 +56,19 @@ The target image file for compressing.
 
 - Type: `Object`
 - Optional
-
-The options for compressing. Check out the available [options]().
+  - maxWidth: Number, `Infinity`
+  - maxHeight: Number, `Infinity`
+  - minWidth: Number, `0`
+  - minHeight: Number, `0`
+  - maxSize: Number, `Infinity`
+  - quality: [0 - 1], `0.95`
+  - checkOrientation: Boolean, `true`
+  - mimeType: String
+  - validated: `function({ width, height, size, type })`
+  - beforeDraw: `function(context, canvas)`
+  - drew: `function(context, canvas)`
+  - success: `function(file)`
+  - fail: `function(error)`
 
 **Example**
 
@@ -112,7 +131,7 @@ $('#file').on('change', function(e) {
 
 ## Fork from
 
-> `browser-image-compressor` Fork from: [compressorjs@fengyuanchen](https://github.com/fengyuanchen/compressorjs) 
+> `imagemin-web` Fork from: [compressorjs@fengyuanchen](https://github.com/fengyuanchen/compressorjs) 
 > 
 > 在开发拍摄图片上传功能时，发现部分移动设备拍摄上传的图片方向会自动旋转。在 [stackoverflow](https://stackoverflow.com/questions/20600800/) 找到了原因和解决方案，但是处理后在Android和iOS设备上表现不一致（可能是自己的代码有误，并未发现其他人提出该问题）。最后发现 [compressorjs](https://github.com/fengyuanchen/compressorjs) 比较符合预期，但是没有指定压缩大小功能，所以在 `compressorjs` 基础上增加了指定压缩大小的功能，并简化了部分源码。
 
