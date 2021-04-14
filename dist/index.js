@@ -1,5 +1,5 @@
 /*!
- * imagemin.js v1.0.0
+ * imagemin-web v1.1.1
  * (c) 2021 Mervin
  * Released under the MIT License.
  */
@@ -1213,17 +1213,17 @@
 	                result = _context2.sent;
 
 	                if (!(result.size > maxSize)) {
-	                  _context2.next = 17;
+	                  _context2.next = 19;
 	                  break;
 	                }
 
 	                mimeType = mimeType === 'image/png' ? 'image/jpeg' : mimeType; // timer = 7
 
-	                timer = ~~(quality * 10);
+	                timer = ~~(quality * 20);
 
 	              case 8:
 	                if (!timer--) {
-	                  _context2.next = 17;
+	                  _context2.next = 19;
 	                  break;
 	                }
 
@@ -1237,33 +1237,41 @@
 	              case 12:
 	                result = _context2.sent;
 
-	                if (!(result.size < maxSize)) {
+	                if (!(quality < 0.1)) {
 	                  _context2.next = 15;
 	                  break;
 	                }
 
-	                return _context2.abrupt("break", 17);
+	                return _context2.abrupt("break", 19);
 
 	              case 15:
+	                if (!(result.size < maxSize)) {
+	                  _context2.next = 17;
+	                  break;
+	                }
+
+	                return _context2.abrupt("break", 19);
+
+	              case 17:
 	                _context2.next = 8;
 	                break;
 
-	              case 17:
+	              case 19:
 	                success && success(result);
-	                _context2.next = 23;
+	                _context2.next = 25;
 	                break;
 
-	              case 20:
-	                _context2.prev = 20;
+	              case 22:
+	                _context2.prev = 22;
 	                _context2.t0 = _context2["catch"](0);
 	                this.fail(_context2.t0);
 
-	              case 23:
+	              case 25:
 	              case "end":
 	                return _context2.stop();
 	            }
 	          }
-	        }, _callee2, this, [[0, 20]]);
+	        }, _callee2, this, [[0, 22]]);
 	      }));
 
 	      function compress(_x) {
