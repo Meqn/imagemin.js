@@ -38,7 +38,7 @@ module.exports = {
     strict: true,
     file: `dist/${filename}.js`,
     format: 'umd',
-    name: 'Compressor',
+    name: 'Imagemin',
     sourcemap: !isProd,
     banner
   }

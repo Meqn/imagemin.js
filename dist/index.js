@@ -1,12 +1,12 @@
 /*!
- * image-compressorjs v0.6.0
- * (c) 2020 Mervin
+ * imagemin.js v1.0.0
+ * (c) 2021 Mervin
  * Released under the MIT License.
  */
 (function (global, factory) {
 	typeof exports === 'object' && typeof module !== 'undefined' ? module.exports = factory() :
 	typeof define === 'function' && define.amd ? define(factory) :
-	(global = global || self, global.Compressor = factory());
+	(global = global || self, global.Imagemin = factory());
 }(this, (function () { 'use strict';
 
 	function createCommonjsModule(fn, module) {
